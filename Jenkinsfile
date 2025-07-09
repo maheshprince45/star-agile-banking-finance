@@ -20,7 +20,7 @@ pipeline {
       steps {
         sh 'ls -ll'
         // build the project and create a JAR file
-        sh 'cd star-agile-banking-finance && mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Build and Push Docker Image') {
