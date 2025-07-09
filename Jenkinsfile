@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Build and Test') {
       steps {
-        sh 'ls -ltr'
+        sh 'ls -ll'
         // build the project and create a JAR file
         sh 'cd star-agile-banking-finance && mvn clean package'
       }
