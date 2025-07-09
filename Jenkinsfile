@@ -1,7 +1,7 @@
 pipeline {
 
   agent  any
-  
+
    triggers {
   githubPush()
 }
@@ -12,6 +12,7 @@ pipeline {
     stage('Checkout') {
       steps {
        git credentialsId: 'Git-cred', url: 'https://github.com/maheshprince45/star-agile-banking-finance.git'
+       branch: 'master'
       }
     }
     stage('Build and Test') {
@@ -29,7 +30,7 @@ pipeline {
       }
       steps {
         script {
-            sh 'cd tar-agile-banking-finance && docker build -t ${DOCKER_IMAGE} .'
+            sh 'cd star-agile-banking-finance && docker build -t ${DOCKER_IMAGE} .'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
             docker.withRegistry('https://index.docker.io/v1/', "Docker-cred") {
                 dockerImage.push()
