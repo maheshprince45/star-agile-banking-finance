@@ -11,8 +11,9 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-       git credentialsId: 'Git-cred', url: 'https://github.com/maheshprince45/star-agile-banking-finance.git'
-       branch: 'master'
+        git credentialsId: 'Git-cred', 
+            url: 'https://github.com/maheshprince45/star-agile-banking-finance.git', 
+            branch: 'master'
       }
     }
     stage('Build and Test') {
