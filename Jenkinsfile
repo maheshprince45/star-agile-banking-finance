@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "maheshprince/firstwebapp:capstone"
+        DOCKER_IMAGE = "maheshprince/firstwebapp:rolling"
         REGISTRY_CREDENTIALS = credentials('Docker-cred')
       }
       steps {
